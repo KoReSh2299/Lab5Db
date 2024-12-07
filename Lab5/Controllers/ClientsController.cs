@@ -17,9 +17,10 @@ namespace Lab5.Controllers
         }
 
         // GET: ClientsController
-        public ActionResult Index()
+        public async Task<IActionResult> Index(int pageIndex = 1, int pageSize = 20)
         {
-            return View();
+            var items = await _repository.GetPagedAsync(pageIndex, pageSize, true);
+            return View(items);
         }
     }
 }

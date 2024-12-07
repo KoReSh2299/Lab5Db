@@ -1,5 +1,52 @@
-﻿@page
-@{
-}
+﻿
+@model Kursach.Domain.Utilities.PaginatedList<Kursach.Domain.Entities.Client>
 
-<p>Привет</p>
+<h2>Clients</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th>Телефон</th>
+            <th>Постоянный клиент?</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Surname</td>
+                <td>@item.Name</td>
+                <td>@item.MiddleName</td>
+                <td>@item.Telephone</td>
+                <td>@(item.IsRegularClient ? "Да" : "Нет")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav>
+    <ul class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pageIndex="@(Model.PageIndex - 1)">Previous</a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPagesCount; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-pageIndex="@i">@i</a>
+            </li>
+        }
+        @if (Model.HasNextPage)
+        {
+            <li class="page-item">
+                <a class="page-link" asp-action="Index" asp-route-pageIndex="@(Model.PageIndex + 1)">Next</a>
+            </li>
+        }
+    </ul>
+</nav>
