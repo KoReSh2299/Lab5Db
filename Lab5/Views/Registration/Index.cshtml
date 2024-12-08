@@ -1,0 +1,30 @@
+﻿@model Kursach.Application.Dtos.UserForCreationDto
+
+<h2>Регистрация</h2>
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="Username">Имя пользователя</label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password">Пароль</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConfirmPassword">Подтверждение пароля</label>
+        <input asp-for="ConfirmPassword" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+</form>
+ <a asp-controller="Authentification" asp-action="Login">Уже есть аккаунт?</a>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

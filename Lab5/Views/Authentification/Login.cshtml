@@ -1,8 +1,8 @@
 ﻿@{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Войти";
 }
 
-<h1>Login</h1>
+<h1>Вход</h1>
 
 @if (ViewData["ErrorMessage"] != null)
 {
@@ -11,12 +11,12 @@
 
 <form asp-controller="Authentification" asp-action="Authenticate" method="post">
     <div>
-        <label for="Username">Username</label>
+        <label for="Username">Имя пользователя</label>
         <input type="text" id="Username" name="Username" required />
     </div>
     <div>
-        <label for="password">Password</label>
+        <label for="password">Пароль</label>
         <input type="password" id="password" name="password" required />
     </div>
-    <button type="submit">Login</button>
+    <button type="submit">Войти</button>
 </form>

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Kursach\Kursach\Core\Kursach.Application\Kursach.Application.csproj" />
     <ProjectReference Include="..\..\..\Kursach\Kursach\Core\Kursach.Domain\Kursach.Domain.csproj" />
     <ProjectReference Include="..\..\..\Kursach\Kursach\Infrastructure\Kursach.Infrastructure\Kursach.Infrastructure.csproj" />
   </ItemGroup>

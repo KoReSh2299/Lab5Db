@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{593B8B76-68BF-4ADE-B379-17E675CC86EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kursach.Application", "..\..\Kursach\Kursach\Core\Kursach.Application\Kursach.Application.csproj", "{004D9EEE-3CAC-463F-A190-85D59C774FE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5D885F1E-33C2-4702-BAF6-2474AEA71135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D885F1E-33C2-4702-BAF6-2474AEA71135}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D885F1E-33C2-4702-BAF6-2474AEA71135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004D9EEE-3CAC-463F-A190-85D59C774FE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004D9EEE-3CAC-463F-A190-85D59C774FE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004D9EEE-3CAC-463F-A190-85D59C774FE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004D9EEE-3CAC-463F-A190-85D59C774FE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
