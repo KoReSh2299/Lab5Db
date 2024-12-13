@@ -1,0 +1,26 @@
+﻿@model Kursach.Application.Dtos.CarForUpdateDto
+
+<h2>Редактировать автомобиль</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="Brand">Марка</label>
+        <input type="text" name="Brand" id="Brand" class="form-control" value="@Model.Brand" required />
+    </div>
+    <div class="form-group">
+        <label for="Number">Номер</label>
+        <input type="text" name="Number" id="Number" class="form-control" value="@Model.Number" required />
+    </div>
+    <div class="form-group">
+        <label for="ClientId">Клиент</label>
+        <select name="ClientId" id="ClientId" class="form-control" required>
+            <option value="">Выберите клиента</option>
+            @foreach (var client in ViewBag.Clients as List<SelectListItem>)
+            {
+                <option value="@client.Value">@client.Text</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>

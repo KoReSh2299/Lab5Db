@@ -1,0 +1,27 @@
+﻿@model Kursach.Application.Dtos.ClientForUpdateDto
+
+<h2>Изменить клиента</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="Surname">Фамилия</label>
+        <input type="text" name="Surname" id="Surname" class="form-control" value="@Model.Surname" required />
+    </div>
+    <div class="form-group">
+        <label for="Name">Имя</label>
+        <input type="text" name="Name" id="Name" class="form-control" value="@Model.Name" required />
+    </div>
+    <div class="form-group">
+        <label for="MiddleName">Отчество</label>
+        <input type="text" name="MiddleName" id="MiddleName" class="form-control" value="@Model.MiddleName" required />
+    </div>
+    <div class="form-group">
+        <label for="Telephone">Телефон</label>
+        <input type="text" name="Telephone" id="Telephone" class="form-control" value="@Model.Telephone" required />
+    </div>
+    <div class="form-group">
+        <label for="IsRegularClient">Постоянный клиент</label>
+        <input type="checkbox" name="IsRegularClient" id="IsRegularClient" value="true" @(Model.IsRegularClient ? "checked" : "") />
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>

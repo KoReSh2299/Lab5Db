@@ -1,0 +1,10 @@
+﻿@model Kursach.Domain.Entities.Client
+
+<h2>Удалить клиента</h2>
+<p>Вы уверены, что хотите удалить клиента <strong>@Model.Surname @Model.Name @Model.MiddleName</strong>?</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <button type="submit" class="btn btn-danger">Удалить</button>
+    <a class="btn btn-secondary" asp-action="Index">Отмена</a>
+</form>

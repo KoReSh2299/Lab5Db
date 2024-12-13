@@ -22,7 +22,7 @@ namespace Lab5.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(UserForCreationDto user)
+        public async Task<IActionResult> Index(UserForCreationDto user)
         {
             if(!ModelState.IsValid)
             {
@@ -46,8 +46,8 @@ namespace Lab5.Controllers
                 CreatedAt = DateTime.Now
             };
 
-            _userRepository.Create(newUser);
-            _userRepository.SaveChanges();
+            await _userRepository.Create(newUser);
+            await _userRepository.SaveChangesAsync();
 
             return RedirectToAction("SuccessRegistration");
         }

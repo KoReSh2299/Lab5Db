@@ -1,0 +1,21 @@
+﻿@model Kursach.Application.Dtos.ParkingSpaceForCreationDto
+
+<h2>Добавить парковочное место</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="IsPenalty">Штрафное место</label>
+        <input type="checkbox" name="IsPenalty" id="IsPenalty" class="form-check-input" />
+    </div>
+    <div class="form-group">
+        <label for="CarId">Машина</label>
+        <select name="CarId" id="CarId" class="form-control">
+            <option value="">Выберите машину</option>
+            @foreach (var car in ViewBag.Cars as List<SelectListItem>)
+            {
+                <option value="@car.Value">@car.Text</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-success">Сохранить</button>
+</form>

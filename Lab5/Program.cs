@@ -30,6 +30,9 @@ namespace Lab5
 
                 builder.Services.AddScoped<IClientRepository, ClientRepository>();
                 builder.Services.AddScoped<IUserRepository, UserRepository>();
+                builder.Services.AddScoped<ICarRepository, CarRepository>();
+                builder.Services.AddScoped<IParkingSpaceRepository, ParkingSpaceRepository>();
+                builder.Services.AddAutoMapper(typeof(Kursach.Application.MappingProfile));
                 builder.Services.AddRazorPages();
 
 

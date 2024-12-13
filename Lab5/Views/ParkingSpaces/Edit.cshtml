@@ -1,0 +1,25 @@
+﻿@model Kursach.Application.Dtos.ParkingSpaceForUpdateDto
+
+<h2>Редактировать парковочное место</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="form-group">
+        <label for="IsPenalty">Штрафное место</label>
+        <input type="hidden" name="IsPenalty" value="false" />
+        <input type="checkbox" name="IsPenalty" id="IsPenalty" value="true" @(Model.IsPenalty ? "checked" : "") />
+    </div>
+    <div class="form-group">
+        <label for="CarId">Машина</label>
+        <select name="CarId" id="CarId" class="form-control">
+            <option value="">Выберите машину</option>
+            @foreach (var car in ViewBag.Cars as List<SelectListItem>)
+            {
+                <option value="@car.Value">
+                    @car.Text
+                </option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>
